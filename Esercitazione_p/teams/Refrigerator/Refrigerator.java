@@ -1,20 +1,126 @@
-/*
-Creare un programma in grado di gestire una spesa in modo automatico, andando a riempire un frigorifero virtuale
- - un frigorifero ha la capienza minima di 3 ripiani da 4 elementi + 1 da 5 elementi SOLO congelatore.
- - ogni elemento acquistato surgelato, DEVE essere riposto nel congelatore
- - un elemento ha come minimo nome, data di scadenza, surgelato (si/no)
-        *per semplicità, la data viene espressa con un numero intero --> 11/03/2020  20200311 (anno-mese-giorno)*
+class Refrigerator {
 
-Il programma deve caricare una serie di elementi di base, e dare la possibilità di caricarne una lista (la nostra spesa) da tastiera
+     private Item[][] normalShelfs;
+     private Item[][] freezingShelfs;
 
-Il programma deve prevedere un modo per buttare via gli elementi scaduti, operazione che viene fatta subito prima di caricare la nostra spesa personale
+     public Refrigerator(int normalShelfs, int itemPerNormalShelfs, int freezingShelfs, int itemPerFreezingShelfs) {
+          this.normalShelfs = new Item[normalShelfs][itemPerNormalShelfs];
+          this.freezingShelfs = new Item[freezingShelfs][itemPerFreezingShelfs];
+     }
 
-Stampare a video tutti gli elementi divisi per ripiano, incluso il congelatore.
+     public Item[][] getNormalShelfs() {
+          return normalShelfs;
+     }
 
+     public Item[][] getFreezingShelfs() {
+          return freezingShelfs;
+     }
 
+     private void putItemInSlot(Item item, int shelf, int slot) {
+          if (item.isFreeze()) {
+               if (shelf < freezingShelfs.length && slot < freezingShelfs[shelf].length) {
+                    if (freezingShelfs[shelf][slot] != null) {
+                         freezingShelfs[shelf][slot] = item;
+                    }
+               }
 
-EXPERT ZONE:
-il frigorifero ha diversi scomparti, prevederne uno per le bottiglie, ortaggi, lunga conservazione o freschi.
-il tipo di elemento definisce la priorità di collocamento nel frigorifero:
-     una bottiglia può essere riposta nei classici ripiani ma predilige lo sportello apposito
-*/
+          } else {
+               if (shelf < normalShelfs.length && slot < normalShelfs[shelf].length) {
+                    if (normalShelfs[shelf][slot] != null) {
+                         normalShelfs[shelf][slot] = item;
+                    }
+               }
+          }
+     }
+
+     public boolean putItem(Item item) {
+          if (item.isFreeze()) {
+               return putFreeSlotFreezingShelfs(item);
+          } else {
+               return putFreeSlotNormalShelfs(item);
+          }
+     }
+
+     public boolean putFreeSlotFreezingShelfs(Item item) {
+          boolean putIn = false;
+          for (int i = 0; i < freezingShelfs.length; i++) {
+               for (int j = 0; j < freezingShelfs[i].length; j++) {
+                    if (freezingShelfs[i][j] == null && !putIn) {
+                         freezingShelfs[i][j] = item;
+                         putIn = true;
+                         return putIn;
+                    }
+               }
+          }
+          return putIn;
+     }
+
+     public boolean putFreeSlotNormalShelfs(Item item) {
+          boolean putIn = false;
+          for (int i = 0; i < normalShelfs.length; i++) {
+               for (int j = 0; j < normalShelfs[i].length; j++) {
+                    if (normalShelfs[i][j] == null && !putIn) {
+                         normalShelfs[i][j] = item;
+                         putIn = true;
+                         return putIn;
+                    }
+               }
+          }
+          return putIn;
+     }
+
+     public void printNormalShelfs() {
+          System.out.println("stampa degli item negli scaffali normali");
+          // Item[][] normalShelfs = refrigerator.getNormalShelfs();
+          for (int i = 0; i < normalShelfs.length; i++) {
+               for (int j = 0; j < normalShelfs[i].length; j++) {
+                    if (normalShelfs[i][j] != null) {
+                         String itemInfo = normalShelfs[i][j].toString();
+                         System.out.println("scaffale " + i + ", scomparto " + j + " " + itemInfo);
+                    } else {
+                         System.out.println("scaffale " + i + ", scomparto " + j + " è vuoto");
+                    }
+               }
+          }
+     }
+
+     public void printFreezingShelfs() {
+          System.out.println("stampa degli item negli scaffali congelati");
+
+          for (int i = 0; i < freezingShelfs.length; i++) {
+               for (int j = 0; j < freezingShelfs[i].length; j++) {
+                    if (freezingShelfs[i][j] != null) {
+                         String itemInfo = freezingShelfs[i][j].toString();
+                         System.out.println("scaffale " + i + ", scomparto " + j + " " + itemInfo);
+                    } else {
+                         System.out.println("scaffale " + i + ", scomparto " + j + " è vuoto");
+                    }
+               }
+          }
+     }
+
+     public void clean(int currentDate) {
+          for (int i = 0; i < freezingShelfs.length; i++) {
+               for (int j = 0; j < freezingShelfs[i].length; j++) {
+                    if (freezingShelfs[i][j] != null && currentDate >= freezingShelfs[i][j].getExpireDate()) {
+                         System.out.println("L'elemento " + freezingShelfs[i][j].toString()
+                                   + " è stato buttato via dal congelatore");
+                         freezingShelfs[i][j] = null;
+
+                    }
+               }
+          }
+
+          for (int i = 0; i < normalShelfs.length; i++) {
+               for (int j = 0; j < normalShelfs[i].length; j++) {
+                    if (normalShelfs[i][j] != null && currentDate >= normalShelfs[i][j].getExpireDate()) {
+                         System.out.println(
+                                   "L'elemento " + normalShelfs[i][j].toString() + " è stato buttato via dal frigo");
+                         normalShelfs[i][j] = null;
+
+                    }
+               }
+          }
+     }
+
+}

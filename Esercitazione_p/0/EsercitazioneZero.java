@@ -1,6 +1,17 @@
 import java.util.Scanner; // import Scanner Class
 
 public class EsercitazioneZero {
+    public static void stampaDispari(int[] array) {
+        System.out.println("\nstampa dei numeri dispari dell'array");
+        for (int i = 0; i < array.length; i++) {
+            int resto = array[i] % 2;
+            if (resto > 0) {
+                System.out.print(array[i] + ", ");
+            }
+        }
+        System.out.println("");
+    }
+    
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in); // oggetto Scanner
         System.out.println("Inserisci il numero di interi positivi");
@@ -22,37 +33,38 @@ public class EsercitazioneZero {
 
     }
 
-    public static void stampaDispari(int[] array) {
-        System.out.println("\nstampa dei numeri dispari dell'array");
-        for (int i = 0; i < array.length; i++) {
-            int resto = array[i] % 2;
-            if (resto > 0) {
-                System.out.print(array[i] + ", ");
-            }
-        }
-        System.out.println("");
-
-    }
+    
 }
+
+
+
 
 /**
  * 0. Crea una classe chiamata "EsercitazioneZero" (sai cos'è?) ---Aggiungi il
  * metodo "main" (a cosa serve?) ---Dentro il metodo main, fai visualizzare a
  * video "Inizio Esercizio Zero" ---Apri il terminale, posizionati nella
  * cartella ed esegui: javac EsercitazioneZero.java ---Esegui ora: java
- * EsercitazioneZero 1. Inizializza uno Scanner per prendere da tastiera un
+ * EsercitazioneZero 
+ 1. Inizializza uno Scanner per prendere da tastiera un
  * numero intero ---Salva il numero intero in una variabile (nCicli)
  * ---Inizializza un ciclo FOR, che va da i=0 a nCicli ---Stampa a video la
- * variabile i ad ogni passaggio. 2.Utilizza lo stesso ciclo for, stavolta
- * stampa soltanto i numeri pari 3.Ripeti l'operazione (2.) ma utilizzando un
- * WHILE. 4.Stampa stavolta soltanto i numeri interi divisibili ---con un numero
- * preso da tastiera (quindi senza resto) 5.utilizza nCicli come lunghezza di un
+ * variabile i ad ogni passaggio. 
+ 2.Utilizza lo stesso ciclo for, stavolta
+ * stampa soltanto i numeri pari 
+ 3.Ripeti l'operazione (2.) ma utilizzando un
+ * WHILE. 
+ 4.Stampa stavolta soltanto i numeri interi divisibili ---con un numero
+ * preso da tastiera (quindi senza resto) 
+ 5.utilizza nCicli come lunghezza di un
  * nuovo array di int. ---riempi l'array con una successione di Fibonacci
  * https://it.wikipedia.org/wiki/Successione_di_Fibonacci --- Stampa la
- * successione, ma partendo dall'ultimo valore verso il primo. 6. Stampa a
- * questo punto soltanto i numeri primi dell'array 7. crea un metodo che dato in
+ * successione, ma partendo dall'ultimo valore verso il primo. 
+ 6. Stampa a
+ * questo punto soltanto i numeri primi dell'array 
+ 7. crea un metodo che dato in
  * input un numero, stampa a video lo stesso ---numero elementi di una
- * successione di fibonacci (esempio: 4 -> 0,1,1,2) 8. crea un metodo che dato
+ * successione di fibonacci (esempio: 4 -> 0,1,1,2) 
+ 8. crea un metodo che dato
  * in input un array di interi, stampa a video tutti i numeri DISPARI ---tra 1 e
  * il numero. (esempio 8 -> 2,4,8) 9. stessa cosa del punto (8.) ma con numeri
  * PARI 10. utilizzare tutti e 3 i metodi precedenti alternando i vari input da
