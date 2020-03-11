@@ -3,7 +3,6 @@ class Item {
     private String name;
     private int expireDate;
     private boolean freeze;
-    private String type; //facoltativo
 
     public Item(String itemName, int itemExpireDate, boolean isFreeze) {
         name = itemName;
@@ -31,6 +30,6 @@ class Item {
     }
 
     public String toString(){
-        return "Item -name: "+ name + ", -expireDate: "+ expireDate;
+        return "{ name: "+ name + ", expireDate: "+ expireDate+ ", freeze: "+freeze+"}";
     }
 }

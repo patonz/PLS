@@ -1,9 +1,9 @@
 class Refrigerator {
 
-     private Item[][] normalShelfs;
-     private Item[][] freezingShelfs;
+     private final Item[][] normalShelfs;
+     private final Item[][] freezingShelfs;
 
-     public Refrigerator(int normalShelfs, int itemPerNormalShelfs, int freezingShelfs, int itemPerFreezingShelfs) {
+     public Refrigerator(final int normalShelfs, final int itemPerNormalShelfs, final int freezingShelfs, final int itemPerFreezingShelfs) {
           this.normalShelfs = new Item[normalShelfs][itemPerNormalShelfs];
           this.freezingShelfs = new Item[freezingShelfs][itemPerFreezingShelfs];
      }
@@ -16,7 +16,7 @@ class Refrigerator {
           return freezingShelfs;
      }
 
-     private void putItemInSlot(Item item, int shelf, int slot) {
+     private void putItemInSlot(final Item item, final int shelf, final int slot) {
           if (item.isFreeze()) {
                if (shelf < freezingShelfs.length && slot < freezingShelfs[shelf].length) {
                     if (freezingShelfs[shelf][slot] != null) {
@@ -33,7 +33,7 @@ class Refrigerator {
           }
      }
 
-     public boolean putItem(Item item) {
+     public boolean putItem(final Item item) {
           if (item.isFreeze()) {
                return putFreeSlotFreezingShelfs(item);
           } else {
@@ -41,7 +41,7 @@ class Refrigerator {
           }
      }
 
-     public boolean putFreeSlotFreezingShelfs(Item item) {
+     public boolean putFreeSlotFreezingShelfs(final Item item) {
           boolean putIn = false;
           for (int i = 0; i < freezingShelfs.length; i++) {
                for (int j = 0; j < freezingShelfs[i].length; j++) {
@@ -55,7 +55,7 @@ class Refrigerator {
           return putIn;
      }
 
-     public boolean putFreeSlotNormalShelfs(Item item) {
+     public boolean putFreeSlotNormalShelfs(final Item item) {
           boolean putIn = false;
           for (int i = 0; i < normalShelfs.length; i++) {
                for (int j = 0; j < normalShelfs[i].length; j++) {
@@ -71,11 +71,11 @@ class Refrigerator {
 
      public void printNormalShelfs() {
           System.out.println("stampa degli item negli scaffali normali");
-          // Item[][] normalShelfs = refrigerator.getNormalShelfs();
+
           for (int i = 0; i < normalShelfs.length; i++) {
                for (int j = 0; j < normalShelfs[i].length; j++) {
                     if (normalShelfs[i][j] != null) {
-                         String itemInfo = normalShelfs[i][j].toString();
+                         final String itemInfo = normalShelfs[i][j].toString();
                          System.out.println("scaffale " + i + ", scomparto " + j + " " + itemInfo);
                     } else {
                          System.out.println("scaffale " + i + ", scomparto " + j + " è vuoto");
@@ -85,12 +85,12 @@ class Refrigerator {
      }
 
      public void printFreezingShelfs() {
-          System.out.println("stampa degli item negli scaffali congelati");
+          System.out.println("Stampa degli item negli scaffali congelati");
 
           for (int i = 0; i < freezingShelfs.length; i++) {
                for (int j = 0; j < freezingShelfs[i].length; j++) {
                     if (freezingShelfs[i][j] != null) {
-                         String itemInfo = freezingShelfs[i][j].toString();
+                         final String itemInfo = freezingShelfs[i][j].toString();
                          System.out.println("scaffale " + i + ", scomparto " + j + " " + itemInfo);
                     } else {
                          System.out.println("scaffale " + i + ", scomparto " + j + " è vuoto");
@@ -99,10 +99,10 @@ class Refrigerator {
           }
      }
 
-     public void clean(int currentDate) {
+     public void clean(final int date) {
           for (int i = 0; i < freezingShelfs.length; i++) {
                for (int j = 0; j < freezingShelfs[i].length; j++) {
-                    if (freezingShelfs[i][j] != null && currentDate >= freezingShelfs[i][j].getExpireDate()) {
+                    if (freezingShelfs[i][j] != null && date >= freezingShelfs[i][j].getExpireDate()) {
                          System.out.println("L'elemento " + freezingShelfs[i][j].toString()
                                    + " è stato buttato via dal congelatore");
                          freezingShelfs[i][j] = null;
@@ -113,7 +113,7 @@ class Refrigerator {
 
           for (int i = 0; i < normalShelfs.length; i++) {
                for (int j = 0; j < normalShelfs[i].length; j++) {
-                    if (normalShelfs[i][j] != null && currentDate >= normalShelfs[i][j].getExpireDate()) {
+                    if (normalShelfs[i][j] != null && date >= normalShelfs[i][j].getExpireDate()) {
                          System.out.println(
                                    "L'elemento " + normalShelfs[i][j].toString() + " è stato buttato via dal frigo");
                          normalShelfs[i][j] = null;
