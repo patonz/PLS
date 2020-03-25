@@ -13,24 +13,21 @@ class Oggetto {
     }
 
 
-    public void ricorsione(int contatore, int inizio, int fine, int numVolte){
-      //  System.out.println("numvolte: "+ numVolte);
+    public void ricorsione(int contatore, int inizio, int fine, int numVolte, int numMaxVolte){
       
         if(contatore == fine){
-            if(numVolte >= 3){
+            if(numVolte >= numMaxVolte){
                 return;
             } else {
                 numVolte++;
-                ricorsione(inizio, inizio, fine, numVolte);
+                ricorsione(inizio, inizio, fine, numVolte, numMaxVolte);
                 return;
             }
            
         }
-
-
         System.out.println(contatore);
         contatore++;
-        ricorsione(contatore, inizio, fine, numVolte);
+        ricorsione(contatore, inizio, fine, numVolte, numMaxVolte);
     }
 
      // get + NomeVariabile

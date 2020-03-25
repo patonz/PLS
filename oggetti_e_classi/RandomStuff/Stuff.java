@@ -6,7 +6,7 @@ class Stuff {
     //   stampaAVideo("stampa getStaticNumero " + Oggetto.getStaticNumero());
 
         Oggetto miooggetto = new Oggetto(15);
-        miooggetto.ricorsione(0, 0, 30, 0);
+        miooggetto.ricorsione(0, 0, 30, 0, 3);
         /*
         stampaAVideo("stampa getStaticNumero " + Oggetto.getStaticNumero());
         final int numero = miooggetto.getNumero();

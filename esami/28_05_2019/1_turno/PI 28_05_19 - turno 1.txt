@@ -1,0 +1,71 @@
+﻿Esame di Programmazione Internet
+CdL in Informatica per il Management
+Data Appello: 28/05/2019 - Turno 1
+Tempo a Disposizione: 2h
+INFORMAZIONI PRELIMINARI
+L'esame consiste nello scrivere uno o più file *.java compilabili.
+Elaborati che non compilano il codice prodotto non verranno presi in considerazione (compito bocciato).
+E' consentito l’uso di testi e appunti SOLO cartacei.
+All’inizio di ogni file .java mettete come commento, Nome, Cognome, Num Matricola. Se non lo farete il compito sarà annullato (compito bocciato). Esempio:
+
+
+/**********************************
+* Nome: Paolino
+* Cognome: Paperino
+* Num Matricola: 12345678
+* email: paperino@unibo.it                                
+**********************************/
+
+
+Se il testo richiede effettuare lettura di file testuali, il candidato deve crearsene alcuni di esempio da solo (usando jEdit come editor e salvando il file con estensione .txt), rispettando le specifiche date.
+E' consentito invocare qualunque metodo delle API di Java.
+
+
+La prova intende valutare, oltre alla verifica che lo studente ha acquisito competenze nell'ambito della programmazione, la capacità del candidato di comprendere il testo del compito (i.e., programmi che girano ma non fanno quanto richiesto verranno considerati insufficienti), la capacità di inserire commenti al codice per facilitare la comprensione dell'elaborato, la capacità di scrivere codice pulito e ordinato, la capacità di ottimizzare la soluzione (soprattutto in termini di efficienza del programma).
+NOTE TECNICHE
+Nel caso (frequente) vi si dovesse bloccare il sistema di sviluppo (ex: per loop infinito), potete aprire un terminale (CTRL-ALT-t) e provare scrivere il comando “pkill java” o “pkill jedit”. Se si dovesse chiudere jEdit (che e` quello che dovrebbe capitare), poi scrivere “jedit &” e il sistema dovrebbe ripartire.
+
+
+NOTA LOGISTICA
+Agli studenti affetti da disturbi quali dislessia, è richiesto di completare due esercizi a scelta tra quelli proposti. Il tempo di svolgimento resta lo stesso concesso agli altri.
+Nota per lo studente: Per sicurezza, nei commenti iniziali si scriva “studente con DSA”.
+Nota per gli altri studenti: Il disturbo è stato certificato e il docente avvisato preliminarmente.
+TESTO DEL COMPITO
+Esercizio 1 
+Realizzare un programma, denominato Esercizio1, contenente una funzione cdispari(n), che dato un intero n che si garantisce essere >= 1, restituisce un valore true se tutte le cifre della rappresentazione decimale di n sono dispari, e false altrimenti. 
+Ad esempio, cdispari(13) deve restituire true, perché il numero 13 ha tutte le cifre dispari. Invece, cdispari(231) deve restituire false, perché il numero 231 NON ha tutte le cifre dispari. Ricordare che zero è pari.
+
+
+Esercizio 2
+Realizzare un programma, denominato Esercizio2 che, preso in input un array bidimensionale quadrato (ovvero, numero di righe uguale a numero di colonne) a[][] di interi, modifichi l’array nel seguente modo:
+Data la i-esima riga
+* Se l’elemento sulla diagonale principale è uguale a 0, allora il valore di quell’elemento va aggiornato inserendo la somma di tutti i restanti elementi della riga;
+* Altrimenti, la riga resta inalterata.
+Esempio, se abbiamo in input l’array bidimensionale
+[ 0  2  5  6
+  1  2  3  4
+  4 -1  0  4
+  5  6  7  9 ]
+L’array bidimensionale finale sarà
+[ 13 2  5  6
+   1  2  3  4
+   4 -1 -1  4
+   5  6  7  9 ]
+
+
+Esercizio 3
+La seguente classe Java descrive una cella di memoria che contiene un intero:
+class Cell{
+{
+private int val;
+public Cell(int v) {val=v;}
+public int getVal() {return val;}
+public void setVal(int v){val=v;}
+}
+Oltre alle normali celle di memoria ne esistono altri due tipi:
+* Cella con backup: ogni volta che viene modificato il valore, tiene traccia del valore precedente la modifica. E’ possibile ripristinare questo valore eseguendo l’operazione setToPreviousValue()
+* Cella con default: al momento dell’inizializzazione della cella viene impostato un valore di default (corrispondente al valore iniziale) che può essere ripristinato invocando il metodo setToDefault()
+
+
+Definire opportunamente le classi CellWithBackup e CellWithDefaultValue e scrivere una classe test che memorizza in un vettore 5 oggetti di tipo Cell, CellWithBackup o CellWithDefaultValue, e ne mostra il contenuto attraverso un ciclo polimorfico. 
+Gli oggetti possono contenere valori arbitrari e non devono essere tutti dello stesso tipo.
