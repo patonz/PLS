@@ -31,6 +31,7 @@ Agli studenti affetti da disturbi quali dislessia, è richiesto di completare du
 Nota per lo studente: Per sicurezza, nei commenti iniziali si scriva “studente con DSA”.
 Nota per gli altri studenti: Il disturbo è stato certificato e il docente avvisato preliminarmente.
 TESTO DEL COMPITO
+
 Esercizio 1 
 Realizzare un programma, denominato Esercizio1, contenente una funzione cdispari(n), che dato un intero n che si garantisce essere >= 1, restituisce un valore true se tutte le cifre della rappresentazione decimale di n sono dispari, e false altrimenti. 
 Ad esempio, cdispari(13) deve restituire true, perché il numero 13 ha tutte le cifre dispari. Invece, cdispari(231) deve restituire false, perché il numero 231 NON ha tutte le cifre dispari. Ricordare che zero è pari.
@@ -58,6 +59,7 @@ La seguente classe Java descrive una cella di memoria che contiene un intero:
 class Cell{
 {
 private int val;
+
 public Cell(int v) {val=v;}
 public int getVal() {return val;}
 public void setVal(int v){val=v;}

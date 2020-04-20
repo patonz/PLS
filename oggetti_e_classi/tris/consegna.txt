@@ -1,0 +1,40 @@
+ - partite singole 1 vs 1;
+ - far inserire il nome del player1 e del player2: controllare che siano diversi
+ - Il simbolo e il primo giocatore viene scelto a caso dal programma (chi inizia?)
+ - Implementare il gioco del tris(https://it.wikipedia.org/wiki/Tris_(gioco)). 
+ - Gestire condizioni di vittoria, perdita, pareggio. 
+ - Chiedere in caso di pareggio di rifare una partita
+ - Super Facoltativo: leggere gli highscores da file, e scriverli su file. 
+   Possibilità di visualizzarli da menù:
+   topolino 10
+   paperino 3
+   leo 1
+
+
+ - Ad ogni mossa viene chiesto al giocatore la casella in cui
+ vuole mettere il proprio simbolo, tipo : 
+
+
+   A   B   C
+1 _X_|_O_|___
+2 ___|_X_|___
+3    |   |
+
+O: Player1, scegli la tua mossa:
+c1
+
+   A   B   C
+1 _X_|_O_|_O_
+2 ___|_X_|___
+3    |   |
+
+X: Player2, scegli la tua mossa:
+c3
+
+   A   B   C
+1 _X_|_O_|_O_
+2 ___|_X_|___
+3    |   | X
+
+X: Player2 Vince!
+

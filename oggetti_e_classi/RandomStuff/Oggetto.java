@@ -4,7 +4,10 @@ class Oggetto {
     private static int instanceCounter = 0;
 
 
-    public Oggetto(int inputNum){
+    public Oggetto(int inputNum) throws ContoNonValidException {
+        if(inputNum==0){
+            throw new Exception("numero di conto sbagliato!!!");
+        }
      numero = inputNum;
      staticNumero = staticNumero + inputNum;
      instanceCounter++;
