@@ -1,4 +1,4 @@
-public class Cell {
+public class Cell implements Comparable{
 
     private int val;
 
@@ -18,4 +18,16 @@ public class Cell {
     public String toString() {
         return "Valore Cella = " + this.getVal();
     }
+
+  @Override
+  public int compareTo(Object arg0) {
+      if(arg0 instanceof Cell){
+          Cell inputCell = (Cell) arg0;
+          if(this.val == inputCell.getVal()){
+              return 1;
+          } else {
+              return 0;
+          }
+      } else return 0;
+  }
 }

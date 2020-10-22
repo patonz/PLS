@@ -1,18 +1,32 @@
-class Oggetto {
+class Oggetto implements Comparable {
     private int numero = 0;
     private static int staticNumero = 0;
     private static int instanceCounter = 0;
 
 
-    public Oggetto(int inputNum) throws ContoNonValidException {
-        if(inputNum==0){
-            throw new Exception("numero di conto sbagliato!!!");
-        }
+    public Oggetto(int inputNum) {
+
      numero = inputNum;
      staticNumero = staticNumero + inputNum;
      instanceCounter++;
 
  
+    }
+
+    @Override
+    public int compareTo(Object input) {
+        if(input instanceof Oggetto){
+            Oggetto inputOggetto = (Oggetto) input;
+            System.out.println("è i tipo 'Oggetto'");
+            if(this.numero == inputOggetto.getNumero()){
+                return 1;
+            } else {
+                return 0;
+            }
+          
+        } else {
+            return 0;
+        }
     }
 
 
@@ -58,5 +72,7 @@ class Oggetto {
     public static String getCiao(){
         return "ciao";
     }
+
+    
     
 }
