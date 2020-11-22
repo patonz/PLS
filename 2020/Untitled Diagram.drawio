@@ -1,9 +1,33 @@
-<mxfile host="app.diagrams.net" modified="2020-11-22T21:51:19.279Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" etag="QrGT4VTQy1mDM8zaZpq5" version="13.10.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-22T22:02:19.935Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15" etag="rDdj8H-KZgd_8UxpKbMe" version="13.10.1" type="github">
   <diagram id="dlxxVZnVpfCTJWUTEk-9" name="Page-1">
-    <mxGraphModel dx="682" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="525" dy="406" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-5" value="Package" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-6" value="Warehouse_1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="150" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="E1Dp6KLdL7x8d0g9QDhC-7" target="E1Dp6KLdL7x8d0g9QDhC-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="E1Dp6KLdL7x8d0g9QDhC-7" target="E1Dp6KLdL7x8d0g9QDhC-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="E1Dp6KLdL7x8d0g9QDhC-7" target="E1Dp6KLdL7x8d0g9QDhC-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-7" value="Gestore&lt;br&gt;Warehouse" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-14" value="Warehouse_2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E1Dp6KLdL7x8d0g9QDhC-15" value="Warehouse_N" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
